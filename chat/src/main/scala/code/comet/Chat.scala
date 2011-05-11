@@ -31,9 +31,5 @@ class Chat extends CometActor with CometListener {
     case v: Vector[String] => msgs = v; reRender()
   }
 
-  /**
-   * Put the messages in the li elements and clear
-   * any elements that have the clearable class.
-   */
-  def render = "li *" #> msgs & ClearClearable
+  def render = ajaxButton("Emit notice",()=>{notice("This is emitted on ajax");JsCmds.Noop})
 }
