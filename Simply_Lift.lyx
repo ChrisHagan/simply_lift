@@ -557,10 +557,18 @@ reference "sec:Snippets"
 \end_layout
 
 \begin_layout Standard
+We're already starting with a best practice, which is to separate the class attributes from the logical attributes.  The class attributes should ideally be left for your designer to do wonderful CSS Zen Garden tricks, while your
+\family typewriter
+data-lift
+\family default
+ attributes let the backend know where the data should go.
+\end_layout
+
+\begin_layout Standard
 Next, we define how we associate dynamic behavior with the list of chat
  elements: 
 \family typewriter
-<div class="lift:comet?type=Chat">
+<div data-lift="comet?type=Chat">
 \family default
 .
  The 
@@ -604,7 +612,7 @@ target "http://en.wikipedia.org/wiki/Actor_model"
 
 \end_inset
 
- provides state in functional languages include Erlang.
+ provides state in functional languages including Erlang.
  Lift has an Actor library and LiftActors (see 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -650,7 +658,7 @@ The private state, like any private state in prototypical object oriented
 \end_layout
 
 \begin_layout Standard
-registerWith is a method that defines what component to register the Chat
+registerWith is a method that defines which component to register the Chat
  component with.
  Registration is a part of the Listener (or 
 \begin_inset CommandInset href
@@ -775,7 +783,7 @@ ChatServer
 \family typewriter
 static
 \family default
- in that the singleton is an instance of an object and that instance can
+ n that the singleton is an instance of an object and that instance can
  be passed around like any other instance.
  This is why we can return the 
 \family typewriter
@@ -859,7 +867,7 @@ Let's go back to the view and see how the behavior is defined for adding
 \begin_layout Standard
 
 \family typewriter
-<form class="lift:form.ajax">
+<form data-lift="form.ajax">
 \family default
  defines an input form and the 
 \family typewriter
@@ -879,7 +887,7 @@ reference "sec:Ajax"
 \begin_layout Standard
 Next, we define the input form element: 
 \family typewriter
-<input class="lift:ChatIn" id="chat_in"/>
+<input data-lift="ChatIn" id="chat_in"/>
 \family default
 .
  It's a plain old input form, but we've told Lift to modify the 
@@ -1009,7 +1017,7 @@ The first thing that's missing is synchronization or other explicit forms
  of thread locking.
  The application takes advantage of Actors and immutable data structures,
  thus the developer can focus on the business logic rather than the threading
- and locking primatives.
+ and locking primitives.
 \end_layout
 
 \begin_layout Standard
