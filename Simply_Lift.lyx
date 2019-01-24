@@ -487,7 +487,7 @@ lstparams "caption={index.html},language=xml"
 \end_layout
 
 \begin_layout Standard
-It's a valid HTML page, but there are some hinky looking class attributes.
+It's a valid HTML page, but there are some hinky looking attributes and some hinky looking classnames.
  The first one is 
 \family typewriter
 <body class="lift:content_id=main">
@@ -519,12 +519,12 @@ Let's look at the
 <div id="main">
 \family default
 .
- It's got a funky class as well: 
+ It's got a funky attribute as well: 
 \family typewriter
-lift:surround?with=default;at=content
+data-lift="surround?with=default;at=content"
 \family default
 .
- This class invokes a snippet which surrounds the 
+ The data-lift attribute invokes a snippet which surrounds the 
 \family typewriter
 <div>
 \family default
