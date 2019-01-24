@@ -58,7 +58,7 @@ Snippets and SiteMap
 \end_layout
 
 \begin_layout Standard
-Lift services HTTP request in three ways: generating HTML pages, low level
+Lift services HTTP requests in three ways: generating HTML pages, low level
  HTTP responses (e.g., REST), and responding to Ajax/Comet requests.
  Lift treats each type of request differently to make the semantics for
  responding to each type of request most natural.
@@ -159,8 +159,8 @@ LiftRules
 \family default
  are used commonly and some are very infrequently changed from their default.
  LiftRules can be changed during boot, but not at other times.
- So, set all your configuration in boot (or in methods that are called from
- boot).
+ So, set all your configuration in Boot (or in methods that are called from
+ Boot).
 \end_layout
 
 \begin_layout Subsection
@@ -454,9 +454,8 @@ SiteMap
 \end_layout
 
 \begin_layout Standard
-The SiteMap must be defined in boot and is only defined once
-\begin_inset Foot
-status open
+The SiteMap must be defined in boot and is only defined once.
+\end_layout
 
 \begin_layout Plain Layout
 In development mode, the sitemap can be changed dynamically to support changes
