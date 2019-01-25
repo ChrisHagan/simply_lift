@@ -2015,8 +2015,8 @@ Recursive
 \begin_layout Standard
 Lift's snippets are evaluated lazily.
  This means that the body of the snippet is not executed until the outer
- snippet is executed which allows you to return markup from a snippet that
- itself contains a snippet or alternatively, choose part of the snippet
+ snippet is executed.  This allows you to return markup from a snippet that
+ itself contains a snippet or choose part of the snippet
  body that itself contains a snippet invocation.
  For example, in this markup:
 \end_layout
@@ -2108,7 +2108,7 @@ SiteMap
 \family default
  which is used to generate navigation and enforce access control.
  We've seen how Lift's templating system works (well, there are actually
- a bunch of different ways to template in Lift, but we've explored to most
+ a bunch of different ways to template in Lift, but we've explored the most
  common mechanism.) We've seen how snippets work.
 \end_layout
 
