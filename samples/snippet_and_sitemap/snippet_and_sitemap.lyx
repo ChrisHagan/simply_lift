@@ -1246,7 +1246,7 @@ Dynamic content
 
 \begin_layout Standard
 The template is a legal HTML page.
- But there are marker in the page to tell Lift how to interpret the HTML.
+ But there are markers in the page to tell Lift how to interpret the HTML.
 \end_layout
 
 \begin_layout Standard
@@ -1287,7 +1287,7 @@ status open
 
 \begin_layout Plain Layout
 
- <div id="main" class="lift:surround?with=default&at=content">
+ <div id="main" data-lift="surround?with=default&at=content">
 \end_layout
 
 \end_inset
@@ -1296,6 +1296,7 @@ status open
 \end_layout
 
 \begin_layout Standard
+(Note that both & and ; are legal characters to separate the query parameters after the question mark).
 The 
 \family typewriter
 class
@@ -1374,11 +1375,9 @@ status open
 \begin_layout Standard
 Once again, the command is signalled with a 
 \family typewriter
-class
+data-lift
 \family default
- attribute that starts with 
-\family typewriter
-lift:
+ attribute.
 \family default
 .
  In this case, we embed a template from the file 
@@ -1469,10 +1468,10 @@ In order to indicate that content is dynamic, the markup contains a snippet
  invocation.
  That typically takes the form 
 \family typewriter
-class="someclass someothercss lift:mysnippet"
+data-lift="mysnippet"
 \family default
 .
- If a class attribute contains 
+ Alternatively, if a class attribute contains 
 \family typewriter
 lift:xxx
 \family default
@@ -1548,7 +1547,7 @@ status open
 \begin_layout Standard
 Note that the Html5 parser will force all tags to lower case so 
 \family typewriter
-<lift:MySnipet>
+<lift:MySnippet>
 \family default
  will become 
 \family typewriter
@@ -1558,15 +1557,7 @@ Note that the Html5 parser will force all tags to lower case so
 \end_layout
 
 \begin_layout Standard
-Lift 2.3 will also allow snippet invocation in the form 
-\family typewriter
-<div l="mysnippet?param=value">xxx</div>
-\family default
-.
-\end_layout
-
-\begin_layout Standard
-The latter two mechanisms for invoking snippets will not result in valid
+The latter mechanism for invoking snippets will not result in valid
  Html5 templates.
 \end_layout
 
@@ -1784,7 +1775,7 @@ Embedded Example
 \begin_layout Standard
 We've seen how we can embed a template using: 
 \family typewriter
-<div class="lift:embed?what=_embedme">xxx</div>
+<div data-lift="embed?what=_embedme">xxx</div>
 \family default
 .
 \end_layout
